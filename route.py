@@ -18,9 +18,11 @@ def get_city_route(city_id):
     cur_time = r.json()['datetime']
     return {'name':city['name'], 'timezone':city['timezone'], 'current_time':cur_time}
 
-# def create_city_route(city_id: int):
-#     db.append(city.dict*())
-#     return db[-1]
+def create_city_route(city):
+    db.append(city.dict())
+    return db[-1]
 
-# def delete_city(city_id: int):
-#     pass
+def delete_city_route(city_id):
+    delete_city = db[city_id-1]
+    db.pop(city_id-1)
+    return delete_city
